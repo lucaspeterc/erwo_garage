@@ -10,8 +10,8 @@ export default function AboutSection() {
           {/* Image */}
           <div className="relative h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-2xl">
             <Image
-              src="/images/IMG_7381.jpeg"
-              alt="ERWO Garage - Zespół"
+              src="/images/garage4.jpeg"
+              alt="ERWO Garage - Warsztat"
               fill
               className="object-cover"
             />

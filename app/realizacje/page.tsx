@@ -5,18 +5,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const projects = [
-  { id: 1, title: 'BMW M3 – Chip Tuning Stage 2', category: 'Chip Tuning', image: '/images/IMG_7919.jpeg', specs: '+65 KM | +85 Nm' },
-  { id: 2, title: 'Audi A4 – Wymiana rozrządu', category: 'Serwis', image: '/images/IMG_8159.jpeg', specs: 'Wymiana rozrządu' },
-  { id: 3, title: 'VW Golf GTI – Test mocy', category: 'Hamownia', image: '/images/IMG_8315.jpeg', specs: '285 KM | 380 Nm' },
-  { id: 4, title: 'BMW 320d – Chip Tuning', category: 'Chip Tuning', image: '/images/IMG_8587.jpeg', specs: '+40 KM | +80 Nm' },
-  { id: 5, title: 'Mini Cooper S – Stage 1', category: 'Chip Tuning', image: '/images/IMG_9102.jpeg', specs: '+35 KM | +50 Nm' },
-  { id: 6, title: 'Audi S3 – Serwis i tuning', category: 'Kompleksowa obsługa', image: '/images/IMG_9700.jpeg', specs: '+55 KM | +90 Nm' },
-  { id: 7, title: 'Serwis – diagnostyka', category: 'Serwis', image: '/images/IMG_7543.jpeg', specs: 'Diagnostyka komputerowa' },
-  { id: 8, title: 'Hamownia – pomiar mocy', category: 'Hamownia', image: '/images/IMG_8042.jpeg', specs: 'Protokół pomiarowy' },
-  { id: 9, title: 'Chip Tuning – przygotowanie', category: 'Chip Tuning', image: '/images/IMG_9628.jpeg', specs: 'Stage 1' },
-  { id: 10, title: 'Serwis klimatyzacji', category: 'Serwis', image: '/images/IMG_9760.jpeg', specs: 'Serwis AC' },
-  { id: 11, title: 'BMW – kompleksowa obsługa', category: 'Kompleksowa obsługa', image: '/images/IMG_9870.jpeg', specs: 'Serwis + tuning' },
-  { id: 12, title: 'Hamownia – wyniki', category: 'Hamownia', image: '/images/IMG_8687.jpeg', specs: 'Pomiar przed/po' },
+  { id: 1, title: 'BMW M3 – Chip Tuning Stage 2', category: 'Chip Tuning', image: '/images/bmw.jpeg', specs: '+65 KM | +85 Nm' },
+  { id: 2, title: 'Audi A4 – Wymiana rozrządu', category: 'Serwis', image: '/images/audi.jpeg', specs: 'Wymiana rozrządu' },
+  { id: 3, title: 'VW Golf GTI – Test mocy', category: 'Hamownia', image: '/images/vw.jpeg', specs: '285 KM | 380 Nm' },
+  { id: 4, title: 'BMW 320d – Chip Tuning', category: 'Chip Tuning', image: '/images/bmw2.jpeg', specs: '+40 KM | +80 Nm' },
+  { id: 5, title: 'Skoda Octavia – Stage 1', category: 'Chip Tuning', image: '/images/skoda.jpeg', specs: '+35 KM | +50 Nm' },
+  { id: 6, title: 'Audi S3 – Serwis i tuning', category: 'Kompleksowa obsługa', image: '/images/audi2.jpeg', specs: '+55 KM | +90 Nm' },
+  { id: 7, title: 'Serwis – diagnostyka', category: 'Serwis', image: '/images/garage.jpeg', specs: 'Diagnostyka komputerowa' },
+  { id: 8, title: 'Hamownia – pomiar mocy', category: 'Hamownia', image: '/images/garage2.jpeg', specs: 'Protokół pomiarowy' },
+  { id: 9, title: 'BMW – Chip Tuning przygotowanie', category: 'Chip Tuning', image: '/images/bmw3.jpeg', specs: 'Stage 1' },
+  { id: 10, title: 'Serwis klimatyzacji', category: 'Serwis', image: '/images/garage3.jpeg', specs: 'Serwis AC' },
+  { id: 11, title: 'BMW – kompleksowa obsługa', category: 'Kompleksowa obsługa', image: '/images/bmw4.jpeg', specs: 'Serwis + tuning' },
+  { id: 12, title: 'Hamownia – wyniki', category: 'Hamownia', image: '/images/garage4.jpeg', specs: 'Pomiar przed/po' },
 ]
 
 const categories = ['Wszystkie', 'Chip Tuning', 'Serwis', 'Hamownia', 'Kompleksowa obsługa']

@@ -28,7 +28,7 @@ export default function ChipTuningPostPage() {
       <section className="section-padding bg-white">
         <div className="container-custom max-w-3xl">
           <div className="relative h-72 rounded-xl overflow-hidden mb-10">
-            <Image src="/images/IMG_7383.jpeg" alt="Chip Tuning" fill className="object-cover" />
+            <Image src="/images/bmw3.jpeg" alt="BMW – Chip Tuning" fill className="object-cover" />
           </div>
 
           <article className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">

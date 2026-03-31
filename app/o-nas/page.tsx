@@ -59,8 +59,8 @@ export default function ONasPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-80 md:h-[480px] rounded-xl overflow-hidden">
               <Image
-                src="/images/IMG_7381.jpeg"
-                alt="Zespół ERWO Garage"
+                src="/images/garage4.jpeg"
+                alt="Warsztat ERWO Garage"
                 fill
                 className="object-cover"
               />

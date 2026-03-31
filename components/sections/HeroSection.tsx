@@ -7,21 +7,21 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const slides = [
   {
-    image: '/images/IMG_7353.jpeg',
+    image: '/images/garage.jpeg',
     title: 'Twój Samochód w Najlepszych Rękach',
     subtitle: 'Profesjonalny serwis, chip tuning i diagnostyka komputerowa w Radomsku',
     cta1: 'Sprawdź ofertę',
     cta2: 'Umów się online',
   },
   {
-    image: '/images/IMG_8042.jpeg',
+    image: '/images/garage2.jpeg',
     title: 'Chip Tuning & Hamownia',
     subtitle: 'Zwiększ moc swojego auta nawet o 35% z pełną gwarancją',
     cta1: 'Chip Tuning',
     cta2: 'Kalkulator mocy',
   },
   {
-    image: '/images/IMG_7375.jpeg',
+    image: '/images/bmw.jpeg',
     title: 'Autoryzowany Serwis BMW & MINI',
     subtitle: '100 tys. km gwarancji na wybrane usługi. Twój spokój jest naszym priorytetem',
     cta1: 'Nasze usługi',

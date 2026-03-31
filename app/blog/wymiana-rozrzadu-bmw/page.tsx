@@ -28,7 +28,7 @@ export default function RozrzadBMWPage() {
       <section className="section-padding bg-white">
         <div className="container-custom max-w-3xl">
           <div className="relative h-72 rounded-xl overflow-hidden mb-10">
-            <Image src="/images/IMG_7384.jpeg" alt="Wymiana rozrządu BMW" fill className="object-cover" />
+            <Image src="/images/bmw4.jpeg" alt="Wymiana rozrządu BMW" fill className="object-cover" />
           </div>
 
           <article className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">

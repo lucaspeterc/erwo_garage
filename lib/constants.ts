@@ -1,7 +1,7 @@
 // Constants for ERWO Garage website
 
 export const CONTACT_INFO = {
-  phone: '+48 XXX XXX XXX',
+  phone: '+48 794 961 118',
   email: 'kontakt@erwo-garage.pl',
   address: 'Przedborska 45',
   city: 'Radomsko',
@@ -19,8 +19,8 @@ export const CONTACT_INFO = {
 }
 
 export const SOCIAL_MEDIA = {
-  facebook: 'https://facebook.com/erwogarage',
-  instagram: 'https://instagram.com/erwogarage',
+  facebook: 'https://www.facebook.com/ERWOGarage/',
+  instagram: 'https://www.instagram.com/erwo_garage/',
   youtube: 'https://youtube.com/@erwogarage',
 }
 

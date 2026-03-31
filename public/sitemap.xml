@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://erwo-garage.pl/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://erwo-garage.pl/o-nas</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://erwo-garage.pl/kontakt</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://erwo-garage.pl/realizacje</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://erwo-garage.pl/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://erwo-garage.pl/uslugi/serwis-samochodowy</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://erwo-garage.pl/uslugi/chip-tuning</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://erwo-garage.pl/uslugi/hamownia</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://erwo-garage.pl/uslugi/elektronika-warsztatowa</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://erwo-garage.pl/blog/chip-tuning-co-musisz-wiedziec</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://erwo-garage.pl/blog/wymiana-rozrzadu-bmw</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://erwo-garage.pl/blog/diagnostyka-komputerowa</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+</urlset>

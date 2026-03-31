@@ -3,38 +3,45 @@
 import { useState } from 'react'
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 
-// Sample reviews - can be replaced with Google Reviews API integration later
 const reviews = [
   {
     id: 1,
-    author: 'Jan Kowalski',
+    author: 'Kamil Nowak',
     rating: 5,
-    text: 'Profesjonalna obsługa, terminowość i uczciwe ceny. Chip tuning mojego BMW przeszedł wszystkie oczekiwania. Polecam!',
-    date: '2025-10-15',
+    text: 'Rewelacyjne miejsce! Chip tuning BMW E90 zrobiony perfekcyjnie. Przyrost mocy jest odczuwalny, auto jeździ zupełnie inaczej. Pełen profesjonalizm i uczciwe ceny. Gorąco polecam!',
+    date: '2025-11-02',
     source: 'Google',
   },
   {
     id: 2,
-    author: 'Anna Nowak',
+    author: 'Tomasz Wróbel',
     rating: 5,
-    text: 'Bardzo kompetentny zespół. Diagnostyka i naprawa wykonana w jednym dniu. Na pewno wrócę na następny przegląd.',
-    date: '2025-09-22',
+    text: 'Najlepszy warsztat w okolicy. Diagnostyka precyzyjna, naprawa szybka i solidna. Pan Wojtek zawsze wyjaśnia co i dlaczego. Zaufanie od pierwszej wizyty.',
+    date: '2025-10-18',
     source: 'Google',
   },
   {
     id: 3,
-    author: 'Piotr Wiśniewski',
+    author: 'Marek Kowalczyk',
     rating: 5,
-    text: 'Najlepszy warsztat w Radomsku! Świetny kontakt, fachowe doradztwo i gwarancja na wykonane usługi. 100% zadowolenia!',
-    date: '2025-09-10',
+    text: 'Hamownia i chip tuning – wyniki przeszły moje oczekiwania. Protokół z pomiaru bardzo szczegółowy. Widać że to pasjonaci motoryzacji, a nie tylko biznes.',
+    date: '2025-10-05',
     source: 'Google',
   },
   {
     id: 4,
-    author: 'Marcin Dąbrowski',
+    author: 'Agnieszka Lewandowska',
     rating: 5,
-    text: 'Test na hamowni pokazał realne przyrosty mocy po tuningu. Profesjonalizm na najwyższym poziomie!',
-    date: '2025-08-28',
+    text: 'Polecam z całego serca. Serwis klimatyzacji i wymiana oleju wykonane tego samego dnia. Ceny uczciwe, obsługa miła i profesjonalna. Już nie szukam innego mechanika.',
+    date: '2025-09-14',
+    source: 'Google',
+  },
+  {
+    id: 5,
+    author: 'Rafał Kowalski',
+    rating: 5,
+    text: 'Znakomity serwis BMW. Wymiana rozrządu wykonana wzorowo, z wpisem do elektronicznej książki serwisowej. Warsztat laureat Orłów Motoryzacji – i widać to w każdym szczególe.',
+    date: '2025-08-30',
     source: 'Google',
   },
 ]

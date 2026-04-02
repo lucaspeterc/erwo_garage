@@ -2,9 +2,11 @@ import { NextRequest, NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 
+// catalog.json must live at <project-root>/lib/catalog.json
+// On Vercel set CATALOG_PATH env var to the absolute path if needed
 const CATALOG_PATH =
   process.env.CATALOG_PATH ||
-  '/lib/catalog.csv'
+  path.join(process.cwd(), 'lib', 'catalog.json')
 
 type Stage = {
   stage_label: string

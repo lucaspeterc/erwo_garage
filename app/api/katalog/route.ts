@@ -4,7 +4,7 @@ import path from 'path'
 
 const CATALOG_PATH =
   process.env.CATALOG_PATH ||
-  '/Users/lukaszciolkowski/Desktop/vtuning-scrapper/output/catalog.json'
+  '/lib/catalog.csv'
 
 type Stage = {
   stage_label: string

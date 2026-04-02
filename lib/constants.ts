@@ -36,6 +36,10 @@ export const NAV_LINKS = [
     ]
   },
   {
+    label: 'Katalog Mocy',
+    href: '/katalog-mocy',
+  },
+  {
     label: 'Realizacje',
     href: '/realizacje',
   },

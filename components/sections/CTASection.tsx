@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Phone, Mail } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
+import { ctaSection } from '@/lib/copy'
 
 export default function CTASection() {
   return (
@@ -16,10 +17,10 @@ export default function CTASection() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Heading */}
           <h2 className="mb-6 text-white">
-            Potrzebujesz Profesjonalnej Obsługi Swojego Auta?
+            {ctaSection.heading}
           </h2>
           <p className="text-xl md:text-2xl mb-8 text-white/90">
-            Umów się na wizytę już dziś i przekonaj się o najwyższej jakości naszych usług
+            {ctaSection.subheading}
           </p>
 
           {/* CTAs */}
@@ -29,7 +30,7 @@ export default function CTASection() {
               className="bg-white text-erwo-red px-8 py-4 rounded-lg font-roboto font-bold text-lg
                          hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              Umów wizytę online
+              {ctaSection.bookButton}
             </Link>
             <a
               href={`tel:${CONTACT_INFO.phone}`}
@@ -38,7 +39,7 @@ export default function CTASection() {
                          flex items-center gap-2"
             >
               <Phone className="w-5 h-5" />
-              Zadzwoń teraz
+              {ctaSection.callButton}
             </a>
           </div>
 
@@ -58,7 +59,7 @@ export default function CTASection() {
           {/* Additional Info */}
           <div className="mt-12 pt-8 border-t border-white/20">
             <p className="text-white/80">
-              <strong className="text-white">Godziny otwarcia:</strong>{' '}
+              <strong className="text-white">{ctaSection.hoursLabel}</strong>{' '}
               {CONTACT_INFO.hours.weekday} | {CONTACT_INFO.hours.saturday}
             </p>
           </div>

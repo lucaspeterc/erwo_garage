@@ -1,5 +1,6 @@
 import { CheckCircle, Cpu, Users, ShieldCheck } from 'lucide-react'
 import { WHY_ERWO } from '@/lib/constants'
+import { whyErwoSection as copy } from '@/lib/copy'
 
 const iconMap = {
   'check-circle': CheckCircle,
@@ -14,9 +15,9 @@ export default function WhyErwoSection() {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="mb-4">Dlaczego ERWO Garage?</h2>
+          <h2 className="mb-4">{copy.heading}</h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-            Wybierz profesjonalizm, doświadczenie i najwyższą jakość obsługi
+            {copy.subheading}
           </p>
         </div>
 

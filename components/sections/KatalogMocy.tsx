@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { ChevronDown, Zap, Leaf, Flame, CreditCard } from 'lucide-react'
+import { katalogMocy as copy } from '@/lib/copy'
 
 // ─── TYPES ────────────────────────────────────────────────────────────────────
 
@@ -118,31 +119,31 @@ function StageCard({ stage }: { stage: Stage }) {
           </div>
         </div>
         <span className={`${cfg.badge} text-white text-xs font-bold px-2.5 py-1 rounded-full font-roboto-condensed uppercase tracking-wide`}>
-          Stage
+          {copy.stageBadge}
         </span>
       </div>
 
       <div className="bg-white px-5 py-4 space-y-3">
         {stage.chip_hp === null ? (
-          <p className="text-gray-400 text-sm font-roboto italic text-center py-3">Wycena indywidualna</p>
+          <p className="text-gray-400 text-sm font-roboto italic text-center py-3">{copy.labelCustom}</p>
         ) : (
           <>
             <div className="flex items-center justify-between">
-              <span className="text-xs uppercase tracking-widest text-gray-400 font-roboto-condensed">Oryginał</span>
+              <span className="text-xs uppercase tracking-widest text-gray-400 font-roboto-condensed">{copy.labelOriginal}</span>
               <span className="text-gray-500 font-roboto text-sm">
                 {stage.orig_hp ?? '—'} KM{stage.orig_nm !== null && <span className="text-gray-400"> / {stage.orig_nm} Nm</span>}
               </span>
             </div>
             <div className="border-t border-gray-100" />
             <div className="flex items-center justify-between">
-              <span className="text-xs uppercase tracking-widest text-gray-400 font-roboto-condensed">Po tuningu</span>
+              <span className="text-xs uppercase tracking-widest text-gray-400 font-roboto-condensed">{copy.labelAfter}</span>
               <span className="font-roboto font-bold text-erwo-dark text-sm">
                 {stage.chip_hp} KM{stage.chip_nm !== null && <span className="font-normal text-gray-500"> / {stage.chip_nm} Nm</span>}
               </span>
             </div>
             <div className="border-t border-gray-100" />
             <div className="flex items-center justify-between">
-              <span className="text-xs uppercase tracking-widest text-gray-400 font-roboto-condensed">Przyrost</span>
+              <span className="text-xs uppercase tracking-widest text-gray-400 font-roboto-condensed">{copy.labelGain}</span>
               <div className="flex items-baseline gap-1.5">
                 {stage.gain_hp !== null && (
                   <span className="font-bebas text-2xl leading-none" style={{ color: cfg.color }}>+{stage.gain_hp} KM</span>
@@ -177,7 +178,9 @@ function ResultPanel({ result }: { result: EngineRecord }) {
         <p className="text-gray-500 font-roboto text-sm mt-2">{result.engine}</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {result.stages.map((stage, i) => <StageCard key={i} stage={stage} />)}
+        {result.stages
+          .filter((s) => s.stage_label === 'Chip Tuning')
+          .map((stage, i) => <StageCard key={i} stage={stage} />)}
       </div>
     </div>
   )
@@ -251,10 +254,10 @@ export default function KatalogMocy() {
       <div className="bg-erwo-black py-16 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #E31E24 0%, transparent 70%)' }} />
         <div className="relative">
-          <p className="text-erwo-red font-roboto-condensed text-sm uppercase tracking-[0.3em] mb-3">Chip Tuning</p>
-          <h1 className="font-bebas text-5xl md:text-7xl tracking-wide text-white leading-none">Katalog Mocy</h1>
+          <p className="text-erwo-red font-roboto-condensed text-sm uppercase tracking-[0.3em] mb-3">{copy.sectionLabel}</p>
+          <h1 className="font-bebas text-5xl md:text-7xl tracking-wide text-white leading-none">{copy.heading}</h1>
           <p className="text-gray-400 font-roboto text-sm mt-4 max-w-lg mx-auto leading-relaxed">
-            Sprawdź potencjał swojego silnika. Wybierz markę, model i wersję silnikową, aby zobaczyć efekty chip tuningu.
+            {copy.subheading}
           </p>
         </div>
       </div>
@@ -264,49 +267,49 @@ export default function KatalogMocy() {
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
             <Select
-              label="Typ pojazdu"
+              label={copy.filterType}
               value={selType}
               onChange={setSelType}
               options={index?.vehicle_types ?? []}
-              placeholder="Wszystkie typy"
+              placeholder={copy.placeholderType}
             />
             <Select
-              label="Marka"
+              label={copy.filterBrand}
               value={selBrand}
               onChange={setSelBrand}
               options={brands}
               disabled={!index}
-              placeholder="Wybierz markę"
+              placeholder={copy.placeholderBrand}
             />
             <Select
-              label="Model"
+              label={copy.filterModel}
               value={selModel}
               onChange={setSelModel}
               options={models}
               disabled={!selBrand || loading}
-              placeholder="Wybierz model"
+              placeholder={copy.placeholderModel}
             />
             <Select
-              label="Generacja"
+              label={copy.filterGen}
               value={selGeneration}
               onChange={setSelGeneration}
               options={generations}
               disabled={!selModel}
-              placeholder="Wybierz generację"
+              placeholder={copy.placeholderGen}
             />
             <Select
-              label="Silnik"
+              label={copy.filterEngine}
               value={selEngine}
               onChange={setSelEngine}
               options={engines}
               disabled={!selGeneration}
-              placeholder="Wybierz silnik"
+              placeholder={copy.placeholderEng}
             />
           </div>
           {(selBrand || selType) && (
             <div className="mt-4 flex justify-end">
               <button onClick={handleReset} className="text-xs text-gray-400 hover:text-erwo-red font-roboto transition-colors duration-200 underline underline-offset-2">
-                Wyczyść wybór
+                {copy.clearButton}
               </button>
             </div>
           )}
@@ -318,14 +321,14 @@ export default function KatalogMocy() {
         {loading && (
           <div className="flex flex-col items-center gap-3 text-gray-400 py-16">
             <div className="w-8 h-8 rounded-full border-2 border-erwo-red border-t-transparent animate-spin" />
-            <span className="font-roboto text-sm">Ładowanie danych…</span>
+            <span className="font-roboto text-sm">{copy.loading}</span>
           </div>
         )}
         {!loading && !result && (
           <div className="text-center py-20">
             <Zap className="w-16 h-16 mx-auto mb-4 text-gray-200" />
             <p className="font-roboto-condensed text-sm uppercase tracking-widest text-gray-400">
-              Wybierz pojazd, aby zobaczyć wyniki tuningu
+              {copy.emptyState}
             </p>
           </div>
         )}

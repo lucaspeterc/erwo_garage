@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { STATS } from '@/lib/constants'
+import { aboutSection } from '@/lib/copy'
 
 export default function AboutSection() {
   return (
@@ -19,21 +20,14 @@ export default function AboutSection() {
 
           {/* Content */}
           <div>
-            <h2 className="mb-6">O ERWO Garage</h2>
+            <h2 className="mb-6">{aboutSection.sectionLabel}</h2>
             <div className="space-y-4 text-gray-700 text-base md:text-lg">
               <p>
-                <strong className="text-erwo-red">ERWO Garage</strong> to profesjonalny warsztat
-                samochodowy z wieloletnim doświadczeniem w branży automotive. Specjalizujemy się
-                w kompleksowej obsłudze serwisowej, chip tuningu oraz diagnostyce komputerowej.
+                <strong className="text-erwo-red">{aboutSection.heading}</strong> {aboutSection.body1}
               </p>
+              <p>{aboutSection.body2}</p>
               <p>
-                Nasz zespół to certyfikowani mechanicy z pasją do motoryzacji. Dysponujemy
-                najnowszym sprzętem diagnostycznym oraz nowoczesną hamownią, co pozwala nam
-                świadczyć usługi na najwyższym poziomie.
-              </p>
-              <p>
-                Jesteśmy <strong>autoryzowanym serwisem BMW i MINI</strong>,
-                co gwarantuje profesjonalną obsługę zgodną z wymogami producenta.
+                {aboutSection.body3prefix} <strong>{aboutSection.body3link}</strong>{aboutSection.body3suffix}
               </p>
             </div>
 
@@ -53,11 +47,11 @@ export default function AboutSection() {
 
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/o-nas" className="btn-primary">
-                Poznaj nas lepiej
+              <Link href={aboutSection.cta1Href} className="btn-primary">
+                {aboutSection.cta1}
               </Link>
-              <Link href="/kontakt" className="btn-outline">
-                Skontaktuj się
+              <Link href={aboutSection.cta2Href} className="btn-outline">
+                {aboutSection.cta2}
               </Link>
             </div>
           </div>

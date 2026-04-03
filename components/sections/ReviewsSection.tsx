@@ -2,49 +2,15 @@
 
 import { useState } from 'react'
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
+import { reviewsSection as copy, reviews as reviewsData } from '@/lib/copy'
 
-const reviews = [
-  {
-    id: 1,
-    author: 'Kamil Nowak',
-    rating: 5,
-    text: 'Rewelacyjne miejsce! Chip tuning BMW E90 zrobiony perfekcyjnie. Przyrost mocy jest odczuwalny, auto jeździ zupełnie inaczej. Pełen profesjonalizm i uczciwe ceny. Gorąco polecam!',
-    date: '2025-11-02',
-    source: 'Google',
-  },
-  {
-    id: 2,
-    author: 'Tomasz Wróbel',
-    rating: 5,
-    text: 'Najlepszy warsztat w okolicy. Diagnostyka precyzyjna, naprawa szybka i solidna. Pan Wojtek zawsze wyjaśnia co i dlaczego. Zaufanie od pierwszej wizyty.',
-    date: '2025-10-18',
-    source: 'Google',
-  },
-  {
-    id: 3,
-    author: 'Marek Kowalczyk',
-    rating: 5,
-    text: 'Hamownia i chip tuning – wyniki przeszły moje oczekiwania. Protokół z pomiaru bardzo szczegółowy. Widać że to pasjonaci motoryzacji, a nie tylko biznes.',
-    date: '2025-10-05',
-    source: 'Google',
-  },
-  {
-    id: 4,
-    author: 'Agnieszka Lewandowska',
-    rating: 5,
-    text: 'Polecam z całego serca. Serwis klimatyzacji i wymiana oleju wykonane tego samego dnia. Ceny uczciwe, obsługa miła i profesjonalna. Już nie szukam innego mechanika.',
-    date: '2025-09-14',
-    source: 'Google',
-  },
-  {
-    id: 5,
-    author: 'Rafał Kowalski',
-    rating: 5,
-    text: 'Znakomity serwis BMW. Wymiana rozrządu wykonana wzorowo, z wpisem do elektronicznej książki serwisowej. Warsztat laureat Orłów Motoryzacji – i widać to w każdym szczególe.',
-    date: '2025-08-30',
-    source: 'Google',
-  },
-]
+const reviews = reviewsData.map((r, i) => ({
+  id: i + 1,
+  author: r.author,
+  rating: r.rating,
+  text: r.text,
+  source: 'Google',
+}))
 
 export default function ReviewsSection() {
   const [currentReview, setCurrentReview] = useState(0)
@@ -64,9 +30,9 @@ export default function ReviewsSection() {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="mb-4">Opinie Klientów</h2>
+          <h2 className="mb-4">{copy.heading}</h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Zobacz, co mówią o nas nasi zadowoleni klienci
+            {copy.subheading}
           </p>
         </div>
 
@@ -101,11 +67,7 @@ export default function ReviewsSection() {
                 {review.author}
               </p>
               <p className="text-sm text-gray-500">
-                {new Date(review.date).toLocaleDateString('pl-PL', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })} • {review.source}
+                {review.source}
               </p>
             </div>
 
@@ -150,7 +112,7 @@ export default function ReviewsSection() {
               rel="noopener noreferrer"
               className="text-erwo-blue hover:underline font-roboto"
             >
-              Zobacz więcej opinii w Google
+              {copy.googleCta}
             </a>
           </div>
         </div>

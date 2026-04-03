@@ -1,43 +1,25 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
+import { blogSection as copy, blogPosts as postsData } from '@/lib/copy'
 
-// Sample blog posts - can be moved to a CMS later
-const blogPosts = [
-  {
-    id: 1,
-    title: 'Chip Tuning - Co musisz wiedzieć przed modyfikacją?',
-    slug: 'chip-tuning-co-musisz-wiedziec',
-    excerpt: 'Kompleksowy przewodnik po chip tuningu. Dowiedz się, jak zwiększyć moc swojego auta bezpiecznie i z gwarancją.',
-    image: '/images/bmw3.jpeg',
-    category: 'Chip Tuning',
-    author: 'ERWO Team',
-    date: '2025-10-20',
-    readTime: '5 min',
-  },
-  {
-    id: 2,
-    title: 'Wymiana rozrządu BMW - Kiedy i dlaczego?',
-    slug: 'wymiana-rozrzadu-bmw',
-    excerpt: 'Poznaj objawy zużycia rozrządu i dowiedz się, kiedy należy wykonać wymianę, aby uniknąć poważnej awarii.',
-    image: '/images/bmw4.jpeg',
-    category: 'Serwis',
-    author: 'ERWO Team',
-    date: '2025-10-15',
-    readTime: '7 min',
-  },
-  {
-    id: 3,
-    title: 'Diagnostyka komputerowa - Klucz do sprawnego auta',
-    slug: 'diagnostyka-komputerowa',
-    excerpt: 'Jak nowoczesna diagnostyka pomaga w szybkim wykryciu usterek i oszczędza Twoje pieniądze.',
-    image: '/images/garage3.jpeg',
-    category: 'Diagnostyka',
-    author: 'ERWO Team',
-    date: '2025-10-10',
-    readTime: '4 min',
-  },
-]
+const images: Record<string, string> = {
+  'chip-tuning-co-musisz-wiedziec': '/images/bmw3.jpeg',
+  'wymiana-rozrzadu-bmw':           '/images/bmw4.jpeg',
+  'diagnostyka-komputerowa':        '/images/garage3.jpeg',
+}
+
+const blogPosts = postsData.map((p, i) => ({
+  id: i + 1,
+  title: p.title,
+  slug: p.slug,
+  excerpt: p.excerpt,
+  image: images[p.slug] ?? '/images/bmw3.jpeg',
+  category: p.category,
+  author: 'ERWO Team',
+  date: p.date,
+  readTime: p.readTime,
+}))
 
 export default function BlogSection() {
   return (
@@ -45,9 +27,9 @@ export default function BlogSection() {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="mb-4">Blog Motoryzacyjny</h2>
+          <h2 className="mb-4">{copy.heading}</h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Porady, nowości i ciekawostki ze świata automotive
+            {copy.subheading}
           </p>
         </div>
 
@@ -99,7 +81,7 @@ export default function BlogSection() {
 
                 {/* Read More */}
                 <span className="inline-flex items-center text-erwo-red font-roboto font-bold group-hover:gap-3 transition-all">
-                  Czytaj więcej
+                  {copy.readMore}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
               </div>
@@ -110,7 +92,7 @@ export default function BlogSection() {
         {/* CTA */}
         <div className="text-center mt-12">
           <Link href="/blog" className="btn-primary text-lg px-8 py-4">
-            Zobacz wszystkie artykuły
+            {copy.allArticles}
           </Link>
         </div>
       </div>

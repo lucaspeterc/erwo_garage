@@ -107,6 +107,22 @@ export default function Footer() {
                   Elektronika Warsztatowa
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/uslugi/geometria-3d"
+                  className="text-gray-400 hover:text-erwo-red transition-colors text-sm"
+                >
+                  Geometria 3D
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/uslugi/klimatyzacja"
+                  className="text-gray-400 hover:text-erwo-red transition-colors text-sm"
+                >
+                  Klimatyzacja
+                </Link>
+              </li>
             </ul>
           </div>
 

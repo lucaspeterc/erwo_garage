@@ -8,8 +8,8 @@ export const CONTACT_INFO = {
   postalCode: '97-500',
   fullAddress: 'Przedborska 45, 97-500 Radomsko',
   hours: {
-    weekday: 'Pon - Pt: 8:00 - 18:00',
-    saturday: 'Sob: 9:00 - 14:00',
+    weekday: 'Pon - Pt: 9:00 - 17:00',
+    saturday: 'Sob: Zamknięte',
     sunday: 'Niedz: Zamknięte'
   },
   coordinates: {
@@ -33,6 +33,8 @@ export const NAV_LINKS = [
       { label: 'Chip Tuning', href: '/uslugi/chip-tuning' },
       { label: 'Hamownia', href: '/uslugi/hamownia' },
       { label: 'Elektronika Warsztatowa', href: '/uslugi/elektronika-warsztatowa' },
+      { label: 'Geometria 3D', href: '/uslugi/geometria-3d' },
+      { label: 'Klimatyzacja', href: '/uslugi/klimatyzacja' },
     ]
   },
   {
@@ -140,7 +142,7 @@ export const WHY_ERWO = [
 
 export const STATS = [
   {
-    value: '15+',
+    value: '10+',
     label: 'Lat doświadczenia'
   },
   {

@@ -4,12 +4,12 @@ import { ArrowRight } from 'lucide-react'
 import { projectsSection as copy, projects as projectsData } from '@/lib/copy'
 
 const images = [
-  '/images/bmw.jpeg',
-  '/images/audi.jpeg',
-  '/images/vw.jpeg',
-  '/images/bmw2.jpeg',
-  '/images/skoda.jpeg',
-  '/images/audi2.jpeg',
+  '/images/audi7.jpeg',
+  '/images/vw7.jpeg',
+  '/images/jaguar.jpeg',
+  '/images/skoda2.jpeg',
+  '/images/vw4.jpeg',
+  '/images/porsche.jpeg',
 ]
 
 const projects = projectsData.map((p, i) => ({

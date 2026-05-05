@@ -19,7 +19,7 @@ export const heroSlides = [
   {
     label:    'Chip Tuning',
     title:    'Chip Tuning & Hamownia',
-    subtitle: 'Zwiększ moc swojego auta nawet o 35% z pełną gwarancją',
+    subtitle: 'Zwiększ moc swojego auta nawet o 35%',
     cta1:     'Chip Tuning',
     cta1Href: '/uslugi/chip-tuning',
     cta2:     'Kalkulator mocy',
@@ -27,7 +27,7 @@ export const heroSlides = [
   },
   {
     label:    'BMW & MINI',
-    title:    'Autoryzowany Serwis BMW & MINI',
+    title:    'Serwis BMW & MINI',
     subtitle: '100 tys. km gwarancji na wybrane usługi. Twój spokój jest naszym priorytetem',
     cta1:     'Nasze usługi',
     cta1Href: '/uslugi',
@@ -43,8 +43,8 @@ export const aboutSection = {
   heading:      'ERWO Garage',
   body1:        'to profesjonalny warsztat samochodowy z wieloletnim doświadczeniem w branży automotive. Specjalizujemy się w kompleksowej obsłudze serwisowej, chip tuningu oraz diagnostyce komputerowej.',
   body2:        'Nasz zespół to certyfikowani mechanicy z pasją do motoryzacji. Dysponujemy najnowszym sprzętem diagnostycznym oraz nowoczesną hamownią, co pozwala nam świadczyć usługi na najwyższym poziomie.',
-  body3prefix:  'Jesteśmy',
-  body3link:    'autoryzowanym serwisem BMW i MINI',
+  body3prefix:  'Oferujemy',
+  body3link:    'serwis BMW i MINI z wpisem do elektronicznej książki serwisowej',
   body3suffix:  ', co gwarantuje profesjonalną obsługę zgodną z wymogami producenta.',
   cta1:         'Poznaj nas lepiej',
   cta1Href:     '/o-nas',
@@ -161,12 +161,12 @@ export const projectsSection = {
 }
 
 export const projects = [
-  { title: 'BMW M3 - Chip Tuning Stage 2',    spec: '+65 KM | +85 Nm',         category: 'Chip Tuning'         },
-  { title: 'Audi A4 - Diagnostyka i Naprawa', spec: 'Wymiana rozrządu',         category: 'Serwis'              },
-  { title: 'VW Golf GTI - Test Mocy',          spec: '285 KM | 380 Nm',          category: 'Hamownia'            },
-  { title: 'BMW 320d - Chip Tuning',           spec: '+40 KM | +80 Nm',          category: 'Chip Tuning'         },
-  { title: 'Skoda Octavia - Stage 1',          spec: '+35 KM | +50 Nm',          category: 'Chip Tuning'         },
-  { title: 'Audi S3 - Serwis i Tuning',        spec: '+55 KM | +90 Nm',          category: 'Kompleksowa obsługa' },
+  { title: 'Audi RS7 2025 - Serwis hamulców',           spec: 'Serwis układu hamulcowego', category: 'Serwis'              },
+  { title: 'VW Golf VII 1.4TSI - Stage 1',              spec: '+30 KM | +50 Nm',           category: 'Chip Tuning'         },
+  { title: 'Jaguar 3.0d - Chip Tuning',                 spec: '+90 KM | +140 Nm',          category: 'Chip Tuning'         },
+  { title: 'Skoda Superb 1.5TSI - Serwis + Stage 1',    spec: '+40 KM | +60 Nm',           category: 'Kompleksowa obsługa' },
+  { title: 'VW Arteon R 320KM - Mapa skrzyni',          spec: 'Modyfikacja skrzyni biegów', category: 'Chip Tuning'         },
+  { title: 'Porsche Cayenne 3.0TDI - Serwis',           spec: 'Serwis eksploatacyjny',      category: 'Serwis'              },
 ]
 
 export const projectsPage = {
@@ -216,13 +216,13 @@ export const katalogMocy = {
 // ─── STRONA O NAS ─────────────────────────────────────────────────────────────
 
 export const aboutPage = {
-  heroSubtitle:  'Pasja do motoryzacji, precyzja w działaniu i zaufanie klientów od ponad 15 lat.',
+  heroSubtitle:  'Pasja do motoryzacji, precyzja w działaniu i zaufanie klientów od 10 lat.',
   whoWeAreLabel: 'Kim jesteśmy?',
   intro1prefix:  'ERWO Garage',
-  intro1:        'to rodzinny warsztat samochodowy zlokalizowany przy ul. Przedborskiej 45 w Radomsku, prowadzony przez',
+  intro1:        'to warsztat samochodowy zlokalizowany przy ul. Przedborskiej 45 w Radomsku, prowadzony przez',
   ownerName:     'Wojciecha Piwowarczyka',
-  intro1suffix:  '. Działamy z pasją do motoryzacji od ponad 15 lat.',
-  intro2:        'Specjalizujemy się w kompleksowym serwisie samochodowym – ze szczególnym uwzględnieniem marek BMW i MINI – oraz w profesjonalnym chip tuningu z pomiarem mocy na własnej hamowni.',
+  intro1suffix:  '. Działamy z pasją do motoryzacji od ponad 10 lat.',
+  intro2:        'Specjalizujemy się w kompleksowym serwisie samochodowym – ze szczególnym uwzględnieniem marek BMW, MINI i VAG– oraz w profesjonalnym chip tuningu z pomiarem mocy na własnej hamowni.',
   intro3prefix:  'Jesteśmy wielokrotnym laureatem prestiżowego wyróżnienia',
   awardName:     'Orły Motoryzacji',
   intro3suffix:  ', przyznawanego najlepszym warsztatom w Polsce przez niezależne jury. To dla nas powód do dumy i codzienna motywacja do jeszcze lepszej pracy.',
@@ -300,7 +300,7 @@ export const serwisPage = {
   ],
   whyLabel:       'Dlaczego ERWO Garage?',
   whyBody1:       'Specjalizujemy się w serwisie marek premium – szczególnie BMW i MINI – ale obsługujemy wszystkie marki osobowe i dostawcze. Każda naprawa jest poprzedzona szczegółową diagnostyką komputerową, a klient jest informowany o zakresie prac i kosztach przed ich rozpoczęciem.',
-  whyBody2:       'Używamy wyłącznie oryginalnych lub równoważnych części od certyfikowanych dostawców. Po serwisie dokonujemy wpisu do elektronicznej książki serwisowej, co chroni Twoją gwarancję producenta.',
+  whyBody2:       'Używamy oryginalnych lub równoważnych części od certyfikowanych dostawców. Po serwisie dokonujemy wpisu do elektronicznej książki serwisowej, co chroni Twoją gwarancję producenta.',
   warrantyBadge:  'Gwarancja na wykonane usługi do 100 000 km',
   phoneLabel:     'Zadzwoń:',
   bookButton:     'Umów wizytę online',
@@ -318,7 +318,7 @@ export const chipTuningPage = {
     'Lepsza odpowiedź na gaz',
     'Gwarancja na wykonaną modyfikację',
     'Możliwość pomiaru mocy przed i po na hamowni',
-    'Bezpieczne parametry – w granicach wytrzymałości silnika',
+    'Bezpieczne parametry',
     'Możliwość przywrócenia ustawień fabrycznych',
   ],
   examplesLabel:    'Przykładowe wyniki',
@@ -334,8 +334,8 @@ export const chipTuningPage = {
     'Odczyt oryginalnego oprogramowania ze sterownika',
     'Optymalizacja map w oprogramowaniu silnika',
     'Wgranie zmodyfikowanego oprogramowania',
-    'Pomiar mocy na hamowni (opcjonalnie)',
-    'Jazda próbna i weryfikacja parametrów',
+    'Pomiar mocy na hamowni',
+    'Logi po modyfikacji i weryfikacja parametrów',
   ],
   warrantyLabel:    'Gwarancja na modyfikację',
   warrantyBody:     'Każdy tuning wykonany w ERWO Garage objęty jest gwarancją. Możliwość powrotu do ustawień fabrycznych.',
@@ -426,7 +426,7 @@ export const blogArticles = {
     readTime: '7 min czytania',
     intro:    'Układ rozrządu to jeden z kluczowych elementów silnika. Odpowiada za synchronizację pracy zaworów z ruchem tłoków. Jego awaria – szczególnie w silnikach BMW – może oznaczać poważne i kosztowne uszkodzenie silnika. Dlatego regularna wymiana rozrządu to jeden z najważniejszych przeglądów, o którym nie wolno zapominać.',
     whenLabel:'Kiedy wymieniać rozrząd w BMW?',
-    when:     'BMW zaleca wymianę łańcucha lub paska rozrządu zazwyczaj co 60 000–100 000 km, w zależności od modelu i roku produkcji. Jednak w praktyce wiele silników BMW (szczególnie N47, N57, N20, N26) jest znanych z problemów z łańcuchem rozrządu znacznie wcześniej. Nie warto czekać na objawy – zapobiegawcza wymiana jest wielokrotnie tańsza od naprawy poawaryjnej.',
+    when:     'BMW zaleca wymianę łańcucha zazwyczaj co 160 000–200 000 km, w zależności od modelu i roku produkcji. Jednak w praktyce wiele silników BMW (szczególnie N47, N57, N20, N26) jest znanych z problemów z łańcuchem rozrządu znacznie wcześniej. Nie warto czekać na objawy – zapobiegawcza wymiana jest wielokrotnie tańsza od naprawy poawaryjnej.',
     symptomsLabel: 'Objawy zużytego rozrządu',
     symptoms: [
       'Charakterystyczny metaliczny stukot przy zimnym rozruchu',
@@ -436,7 +436,7 @@ export const blogArticles = {
       'Utrata mocy i nierówna praca silnika',
     ],
     scopeLabel: 'Co wymieniamy podczas serwisu rozrządu?',
-    scope:    'Profesjonalna wymiana rozrządu w ERWO Garage obejmuje nie tylko łańcuch lub pasek, ale również napinaczy, prowadnic, pompy wody (jeśli napędzana jest przez rozrząd) oraz wszystkich uszczelek. Używamy wyłącznie oryginalnych lub certyfikowanych części. Po wymianie dokonujemy wpisu do elektronicznej książki serwisowej.',
+    scope:    'Profesjonalna wymiana rozrządu w ERWO Garage obejmuje nie tylko łańcuch, ale również napinaczy, prowadnic, pompy wody (jeśli napędzana jest przez rozrząd) oraz wszystkich uszczelek. Używamy wyłącznie oryginalnych lub certyfikowanych części. Po wymianie dokonujemy wpisu do elektronicznej książki serwisowej.',
     ctaHeading: 'Masz BMW i niepewny stan rozrządu?',
     ctaBody:    'Zapraszamy na diagnostykę. Lepiej sprawdzić zawczasu niż naprawiać po awarii.',
     ctaButton:  'Umów przegląd',

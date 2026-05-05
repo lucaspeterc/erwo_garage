@@ -5,18 +5,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const projects = [
-  { id: 1, title: 'BMW M3 – Chip Tuning Stage 2', category: 'Chip Tuning', image: '/images/bmw.jpeg', specs: '+65 KM | +85 Nm' },
-  { id: 2, title: 'Audi A4 – Wymiana rozrządu', category: 'Serwis', image: '/images/audi.jpeg', specs: 'Wymiana rozrządu' },
-  { id: 3, title: 'VW Golf GTI – Test mocy', category: 'Hamownia', image: '/images/vw.jpeg', specs: '285 KM | 380 Nm' },
-  { id: 4, title: 'BMW 320d – Chip Tuning', category: 'Chip Tuning', image: '/images/bmw2.jpeg', specs: '+40 KM | +80 Nm' },
-  { id: 5, title: 'Skoda Octavia – Stage 1', category: 'Chip Tuning', image: '/images/skoda.jpeg', specs: '+35 KM | +50 Nm' },
-  { id: 6, title: 'Audi S3 – Serwis i tuning', category: 'Kompleksowa obsługa', image: '/images/audi2.jpeg', specs: '+55 KM | +90 Nm' },
-  { id: 7, title: 'Serwis – diagnostyka', category: 'Serwis', image: '/images/garage.jpeg', specs: 'Diagnostyka komputerowa' },
-  { id: 8, title: 'Hamownia – pomiar mocy', category: 'Hamownia', image: '/images/garage2.jpeg', specs: 'Protokół pomiarowy' },
-  { id: 9, title: 'BMW – Chip Tuning przygotowanie', category: 'Chip Tuning', image: '/images/bmw3.jpeg', specs: 'Stage 1' },
-  { id: 10, title: 'Serwis klimatyzacji', category: 'Serwis', image: '/images/garage3.jpeg', specs: 'Serwis AC' },
-  { id: 11, title: 'BMW – kompleksowa obsługa', category: 'Kompleksowa obsługa', image: '/images/bmw4.jpeg', specs: 'Serwis + tuning' },
-  { id: 12, title: 'Hamownia – wyniki', category: 'Hamownia', image: '/images/garage4.jpeg', specs: 'Pomiar przed/po' },
+  { id: 1, title: 'Audi RS7 2025 – serwis układu hamulcowego', category: 'Serwis', image: '/images/audi7.jpeg', specs: 'Serwis hamulców' },
+  { id: 2, title: 'VW Golf VII 1.4TSI – Stage 1 ECU + TCU', category: 'Chip Tuning', image: '/images/vw7.jpeg', specs: '+30 KM | +50 Nm' },
+  // { id: 3, title: 'Nissan Qashqai 1.2 Turbo – Chip Tuning', category: 'Chip Tuning', image: '/images/nissan-qashqai.jpeg', specs: '+30 KM | +40 Nm' },
+  { id: 4, title: 'BMW F10 2.0d N47 – modyfikacja punktów zmiany biegów', category: 'Chip Tuning', image: '/images/bmw4.jpeg', specs: 'Mapa skrzyni biegów' },
+  { id: 5, title: 'Nissan 350Z – serwis mechaniczny', category: 'Serwis', image: '/images/received_1264102973931009.jpeg', specs: 'Serwis mechaniczny' },
+  { id: 6, title: 'Skoda Octavia VRS 2.0TDI – Chip Tuning', category: 'Chip Tuning', image: '/images/skoda5.jpeg', specs: '+30 KM | +50 Nm' },
+  { id: 7, title: 'Naprawa elektroniki samochodowej', category: 'Serwis', image: '/images/audi3.jpeg', specs: 'Diagnostyka i naprawa' },
+  { id: 8, title: 'VW Arteon R 320KM – modyfikacja skrzyni biegów', category: 'Chip Tuning', image: '/images/vw4.jpeg', specs: 'Mapa skrzyni biegów' },
+  { id: 9, title: 'Audi Q7 3.0TDI – modyfikacja ciśnienia oleju', category: 'Serwis', image: '/images/audi5.jpeg', specs: 'Modyfikacja ciśnienia oleju' },
+  { id: 10, title: 'Porsche Cayenne 3.0TDI – serwis eksploatacyjny', category: 'Serwis', image: '/images/porsche.jpeg', specs: 'Serwis eksploatacyjny' },
+  { id: 11, title: 'Skoda Superb 1.5TSI – serwis + Stage 1', category: 'Kompleksowa obsługa', image: '/images/skoda2.jpeg', specs: '+40 KM | +60 Nm' },
+  { id: 12, title: 'Jaguar 3.0d – Chip Tuning', category: 'Chip Tuning', image: '/images/jaguar.jpeg', specs: '+90 KM | +140 Nm' },
 ]
 
 const categories = ['Wszystkie', 'Chip Tuning', 'Serwis', 'Hamownia', 'Kompleksowa obsługa']

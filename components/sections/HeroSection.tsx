@@ -4,29 +4,12 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { heroSlides } from '@/lib/copy'
 
-const slides = [
-  {
-    image: '/images/garage.jpeg',
-    title: 'Twój Samochód w Najlepszych Rękach',
-    subtitle: 'Profesjonalny serwis, chip tuning i diagnostyka komputerowa w Radomsku',
-    cta1: 'Sprawdź ofertę',
-    cta2: 'Umów się online',
-  },
-  {
-    image: '/images/garage2.jpeg',
-    title: 'Chip Tuning & Hamownia',
-    subtitle: 'Zwiększ moc swojego auta nawet o 35% z pełną gwarancją',
-    cta1: 'Chip Tuning',
-    cta2: 'Kalkulator mocy',
-  },
-  {
-    image: '/images/bmw.jpeg',
-    title: 'Autoryzowany Serwis BMW & MINI',
-    subtitle: '100 tys. km gwarancji na wybrane usługi. Twój spokój jest naszym priorytetem',
-    cta1: 'Nasze usługi',
-    cta2: 'Kontakt',
-  },
+const slideImages = [
+  '/images/garage.jpeg',
+  '/images/garage2.jpeg',
+  '/images/bmw.jpeg',
 ]
 
 export default function HeroSection() {
@@ -37,7 +20,7 @@ export default function HeroSection() {
     if (!isAutoPlaying) return
 
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
     }, 5000)
 
     return () => clearInterval(interval)
@@ -45,12 +28,12 @@ export default function HeroSection() {
 
   const nextSlide = () => {
     setIsAutoPlaying(false)
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
   }
 
   const prevSlide = () => {
     setIsAutoPlaying(false)
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
   }
 
   const goToSlide = (index: number) => {
@@ -61,7 +44,7 @@ export default function HeroSection() {
   return (
     <section className="relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
       {/* Slides */}
-      {slides.map((slide, index) => (
+      {heroSlides.map((slide, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ${
@@ -70,7 +53,7 @@ export default function HeroSection() {
         >
           {/* Background Image */}
           <Image
-            src={slide.image}
+            src={slideImages[index]}
             alt={slide.title}
             fill
             className="object-cover"
@@ -90,13 +73,13 @@ export default function HeroSection() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
-                  href="#uslugi"
+                  href={slide.cta1Href}
                   className="btn-primary text-lg px-8 py-4"
                 >
                   {slide.cta1}
                 </Link>
                 <Link
-                  href="/kontakt"
+                  href={slide.cta2Href}
                   className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-erwo-black"
                 >
                   {slide.cta2}
@@ -125,7 +108,7 @@ export default function HeroSection() {
 
       {/* Dots Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
-        {slides.map((_, index) => (
+        {heroSlides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}

@@ -22,7 +22,7 @@ export default function Header() {
           <div className="flex items-center gap-6 text-sm">
             <span>Przedborska 45, Radomsko</span>
             <span>|</span>
-            <span>Pon - Pt: 8:00 - 18:00</span>
+            <span>Pon - Pt: 9:00 - 17:00</span>
           </div>
           <div className="flex items-center gap-2">
             <Phone className="w-4 h-4" />

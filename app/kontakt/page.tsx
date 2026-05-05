@@ -8,13 +8,33 @@ export default function KontaktPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
+  const [error, setError] = useState(false)
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
-    // TODO: wire up email sending (Resend / Nodemailer)
-    await new Promise((r) => setTimeout(r, 800))
-    setSubmitted(true)
-    setLoading(false)
+    setError(false)
+
+    const form = e.currentTarget
+    const data = new FormData(form)
+    data.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? '')
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data,
+      })
+      const json = await res.json()
+      if (json.success) {
+        setSubmitted(true)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -94,6 +114,13 @@ export default function KontaktPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  <input type="hidden" name="from_name" value="ERWO Garage - Formularz kontaktowy" />
+                  <input type="hidden" name="subject" value="Nowa wiadomość ze strony erwo-garage.pl" />
+                  {error && (
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 text-sm">
+                      Wystąpił błąd podczas wysyłania. Spróbuj ponownie lub zadzwoń pod {CONTACT_INFO.phone}.
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-erwo-dark mb-1">Imię i nazwisko *</label>

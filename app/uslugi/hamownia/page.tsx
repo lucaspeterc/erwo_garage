@@ -2,10 +2,18 @@ import Link from 'next/link'
 import { CheckCircle, Phone } from 'lucide-react'
 import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/lib/constants'
+import JsonLd, { breadcrumbLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Hamownia | ERWO Garage Radomsko',
   description: 'Profesjonalny pomiar mocy i momentu obrotowego na hamowni w Radomsku. Test przed i po chip tuningu. Wydruk protokołu pomiarowego.',
+  alternates: { canonical: '/uslugi/hamownia' },
+  openGraph: {
+    title: 'Hamownia | ERWO Garage Radomsko',
+    description: 'Profesjonalny pomiar mocy i momentu obrotowego na hamowni w Radomsku. Test przed i po chip tuningu. Wydruk protokołu pomiarowego.',
+    url: 'https://erwo-garage.pl/uslugi/hamownia',
+    type: 'website',
+  },
 }
 
 const features = [
@@ -21,6 +29,8 @@ const features = [
 export default function HamowniaPage() {
   return (
     <main className="pt-24">
+      <JsonLd data={breadcrumbLd([{ name: 'Strona główna', path: '/' }, { name: 'Usługi', path: '/uslugi' }, { name: 'Hamownia', path: '/uslugi/hamownia' }])} />
+      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Service', name: 'Hamownia', serviceType: 'Hamownia', provider: { '@type': 'AutoRepair', name: 'ERWO Garage', '@id': 'https://erwo-garage.pl/#business' }, areaServed: { '@type': 'City', name: 'Radomsko' }, url: 'https://erwo-garage.pl/uslugi/hamownia' }} />
       <section className="bg-erwo-black text-white py-16">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bebas tracking-wide mb-4">Hamownia</h1>

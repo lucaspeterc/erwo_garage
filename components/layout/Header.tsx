@@ -26,7 +26,7 @@ export default function Header() {
           </div>
           <div className="flex items-center gap-2">
             <Phone className="w-4 h-4" />
-            <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-erwo-red transition-colors">
+            <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`} className="hover:text-erwo-red transition-colors">
               {CONTACT_INFO.phone}
             </a>
           </div>
@@ -54,10 +54,13 @@ export default function Header() {
               <li key={link.href} className="relative group">
                 {link.submenu ? (
                   <div>
-                    <button className="flex items-center gap-1 font-roboto font-medium text-erwo-dark hover:text-erwo-red transition-colors">
+                    <Link
+                      href={link.href}
+                      className="flex items-center gap-1 font-roboto font-medium text-erwo-dark hover:text-erwo-red transition-colors"
+                    >
                       {link.label}
                       <ChevronDown className="w-4 h-4" />
-                    </button>
+                    </Link>
                     {/* Dropdown menu */}
                     <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                       <ul className="py-2">
@@ -122,6 +125,15 @@ export default function Header() {
                       </button>
                       {openSubmenu === link.label && (
                         <ul className="mt-2 ml-4 space-y-2">
+                          <li>
+                            <Link
+                              href={link.href}
+                              className="block px-4 py-2 text-sm font-semibold text-erwo-red hover:underline transition-colors"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              Wszystkie usługi
+                            </Link>
+                          </li>
                           {link.submenu.map((sublink) => (
                             <li key={sublink.href}>
                               <Link

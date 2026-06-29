@@ -6,6 +6,13 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'O nas | ERWO Garage - Serwis & Chip Tuning Radomsko',
   description: 'Poznaj ERWO Garage – wielokrotnego laureata Orłów Motoryzacji. Profesjonalny serwis BMW, MINI i chip tuning w Radomsku od ponad 15 lat.',
+  alternates: { canonical: '/o-nas' },
+  openGraph: {
+    title: 'O nas | ERWO Garage Radomsko',
+    description: 'Wielokrotny laureat Orłów Motoryzacji. Serwis BMW, MINI i chip tuning w Radomsku.',
+    url: 'https://erwo-garage.pl/o-nas',
+    type: 'website',
+  },
 }
 
 const awards = [
@@ -62,6 +69,7 @@ export default function ONasPage() {
                 src="/images/garage4.jpeg"
                 alt="Warsztat ERWO Garage"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

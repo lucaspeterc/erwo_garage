@@ -12,10 +12,12 @@ export const metadata: Metadata = {
     'chip tuning KM Nm',
     'ERWO Garage chip tuning',
   ],
+  alternates: { canonical: '/katalog-mocy' },
   openGraph: {
     title: 'Katalog Mocy — Chip Tuning | ERWO Garage',
     description: 'Sprawdź przyrost mocy i momentu obrotowego dla swojego silnika.',
     url: 'https://erwo-garage.pl/katalog-mocy',
+    type: 'website',
   },
 }
 

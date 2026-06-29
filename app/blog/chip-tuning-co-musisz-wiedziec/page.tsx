@@ -2,15 +2,26 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, Clock, ArrowLeft } from 'lucide-react'
 import type { Metadata } from 'next'
+import JsonLd, { breadcrumbLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Chip Tuning – Co musisz wiedzieć przed modyfikacją? | ERWO Garage',
   description: 'Kompleksowy przewodnik po chip tuningu. Dowiedz się, jak zwiększyć moc swojego auta bezpiecznie i z gwarancją w ERWO Garage Radomsko.',
+  alternates: { canonical: '/blog/chip-tuning-co-musisz-wiedziec' },
+  openGraph: {
+    title: 'Chip Tuning – Co musisz wiedzieć przed modyfikacją? | ERWO Garage',
+    description: 'Kompleksowy przewodnik po chip tuningu. Dowiedz się, jak zwiększyć moc swojego auta bezpiecznie i z gwarancją w ERWO Garage Radomsko.',
+    url: 'https://erwo-garage.pl/blog/chip-tuning-co-musisz-wiedziec',
+    type: 'article',
+    publishedTime: '2025-10-20',
+  },
 }
 
 export default function ChipTuningPostPage() {
   return (
     <main className="pt-24">
+      <JsonLd data={breadcrumbLd([{ name: 'Strona główna', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Chip Tuning – Co musisz wiedzieć przed modyfikacją?', path: '/blog/chip-tuning-co-musisz-wiedziec' }])} />
+      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Article', headline: 'Chip Tuning – Co musisz wiedzieć przed modyfikacją?', description: 'Kompleksowy przewodnik po chip tuningu. Dowiedz się, jak zwiększyć moc swojego auta bezpiecznie i z gwarancją w ERWO Garage Radomsko.', datePublished: '2025-10-20', dateModified: '2025-10-20', articleSection: 'Chip Tuning', author: { '@type': 'Organization', name: 'ERWO Garage' }, publisher: { '@type': 'Organization', name: 'ERWO Garage', logo: { '@type': 'ImageObject', url: 'https://erwo-garage.pl/images/garage.jpeg' } }, image: 'https://erwo-garage.pl/images/garage.jpeg', mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erwo-garage.pl/blog/chip-tuning-co-musisz-wiedziec' } }} />
       <section className="bg-erwo-black text-white py-16">
         <div className="container-custom max-w-3xl">
           <Link href="/blog" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-6 transition-colors">
@@ -28,7 +39,7 @@ export default function ChipTuningPostPage() {
       <section className="section-padding bg-white">
         <div className="container-custom max-w-3xl">
           <div className="relative h-72 rounded-xl overflow-hidden mb-10">
-            <Image src="/images/bmw3.jpeg" alt="BMW – Chip Tuning" fill className="object-cover" />
+            <Image src="/images/bmw3.jpeg" alt="BMW – Chip Tuning" fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover" />
           </div>
 
           <article className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">

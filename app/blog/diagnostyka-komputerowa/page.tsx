@@ -2,15 +2,26 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, Clock, ArrowLeft } from 'lucide-react'
 import type { Metadata } from 'next'
+import JsonLd, { breadcrumbLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Diagnostyka komputerowa – Klucz do sprawnego auta | ERWO Garage',
   description: 'Jak nowoczesna diagnostyka komputerowa pomaga w szybkim wykryciu usterek i oszczędza Twoje pieniądze. ERWO Garage Radomsko.',
+  alternates: { canonical: '/blog/diagnostyka-komputerowa' },
+  openGraph: {
+    title: 'Diagnostyka komputerowa – Klucz do sprawnego auta | ERWO Garage',
+    description: 'Jak nowoczesna diagnostyka komputerowa pomaga w szybkim wykryciu usterek i oszczędza Twoje pieniądze. ERWO Garage Radomsko.',
+    url: 'https://erwo-garage.pl/blog/diagnostyka-komputerowa',
+    type: 'article',
+    publishedTime: '2025-10-10',
+  },
 }
 
 export default function DiagnostykaPage() {
   return (
     <main className="pt-24">
+      <JsonLd data={breadcrumbLd([{ name: 'Strona główna', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Diagnostyka komputerowa – Klucz do sprawnego auta', path: '/blog/diagnostyka-komputerowa' }])} />
+      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Article', headline: 'Diagnostyka komputerowa – Klucz do sprawnego auta', description: 'Jak nowoczesna diagnostyka komputerowa pomaga w szybkim wykryciu usterek i oszczędza Twoje pieniądze. ERWO Garage Radomsko.', datePublished: '2025-10-10', dateModified: '2025-10-10', articleSection: 'Diagnostyka', author: { '@type': 'Organization', name: 'ERWO Garage' }, publisher: { '@type': 'Organization', name: 'ERWO Garage', logo: { '@type': 'ImageObject', url: 'https://erwo-garage.pl/images/garage.jpeg' } }, image: 'https://erwo-garage.pl/images/garage.jpeg', mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erwo-garage.pl/blog/diagnostyka-komputerowa' } }} />
       <section className="bg-erwo-black text-white py-16">
         <div className="container-custom max-w-3xl">
           <Link href="/blog" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-6 transition-colors">
@@ -28,7 +39,7 @@ export default function DiagnostykaPage() {
       <section className="section-padding bg-white">
         <div className="container-custom max-w-3xl">
           <div className="relative h-72 rounded-xl overflow-hidden mb-10">
-            <Image src="/images/garage3.jpeg" alt="Diagnostyka komputerowa w warsztacie" fill className="object-cover" />
+            <Image src="/images/garage3.jpeg" alt="Diagnostyka komputerowa w warsztacie" fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover" />
           </div>
 
           <article className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">

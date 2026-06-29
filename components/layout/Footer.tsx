@@ -140,7 +140,7 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <Phone className="w-5 h-5 text-erwo-red flex-shrink-0" />
                 <a
-                  href={`tel:${CONTACT_INFO.phone}`}
+                  href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`}
                   className="text-gray-400 hover:text-erwo-red transition-colors"
                 >
                   {CONTACT_INFO.phone}

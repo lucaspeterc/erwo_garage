@@ -14,6 +14,7 @@ export default function AboutSection() {
               src="/images/garage4.jpeg"
               alt="ERWO Garage - Warsztat"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </div>

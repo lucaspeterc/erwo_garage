@@ -2,10 +2,18 @@ import Link from 'next/link'
 import { CheckCircle, Phone } from 'lucide-react'
 import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/lib/constants'
+import JsonLd, { breadcrumbLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Elektronika Warsztatowa | ERWO Garage Radomsko',
   description: 'Sprzedaż profesjonalnego sprzętu diagnostycznego i narzędzi warsztatowych w Radomsku. Testery, programatory, doradztwo techniczne.',
+  alternates: { canonical: '/uslugi/elektronika-warsztatowa' },
+  openGraph: {
+    title: 'Elektronika Warsztatowa | ERWO Garage Radomsko',
+    description: 'Sprzedaż profesjonalnego sprzętu diagnostycznego i narzędzi warsztatowych w Radomsku. Testery, programatory, doradztwo techniczne.',
+    url: 'https://erwo-garage.pl/uslugi/elektronika-warsztatowa',
+    type: 'website',
+  },
 }
 
 const products = [
@@ -21,6 +29,8 @@ const products = [
 export default function ElektronikaPage() {
   return (
     <main className="pt-24">
+      <JsonLd data={breadcrumbLd([{ name: 'Strona główna', path: '/' }, { name: 'Usługi', path: '/uslugi' }, { name: 'Elektronika Warsztatowa', path: '/uslugi/elektronika-warsztatowa' }])} />
+      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Service', name: 'Elektronika Warsztatowa', serviceType: 'Elektronika Warsztatowa', provider: { '@type': 'AutoRepair', name: 'ERWO Garage', '@id': 'https://erwo-garage.pl/#business' }, areaServed: { '@type': 'City', name: 'Radomsko' }, url: 'https://erwo-garage.pl/uslugi/elektronika-warsztatowa' }} />
       <section className="bg-erwo-black text-white py-16">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bebas tracking-wide mb-4">Elektronika Warsztatowa</h1>

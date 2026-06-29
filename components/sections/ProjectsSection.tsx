@@ -1,24 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
-import { projectsSection as copy, projects as projectsData } from '@/lib/copy'
-
-const images = [
-  '/images/audi7.jpeg',
-  '/images/vw7.jpeg',
-  '/images/jaguar.jpeg',
-  '/images/skoda2.jpeg',
-  '/images/vw4.jpeg',
-  '/images/porsche.jpeg',
-]
-
-const projects = projectsData.map((p, i) => ({
-  id: i + 1,
-  title: p.title,
-  category: p.category,
-  image: images[i] ?? '/images/bmw.jpeg',
-  specs: p.spec,
-}))
+import { projectsSection as copy } from '@/lib/copy'
+import { featuredProjects as projects } from '@/lib/realizacje'
 
 export default function ProjectsSection() {
   return (
@@ -45,6 +29,7 @@ export default function ProjectsSection() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 {/* Category Badge */}

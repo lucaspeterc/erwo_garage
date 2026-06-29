@@ -2,10 +2,18 @@ import Link from 'next/link'
 import { CheckCircle, Phone, Zap } from 'lucide-react'
 import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/lib/constants'
+import JsonLd, { breadcrumbLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Chip Tuning | ERWO Garage Radomsko',
   description: 'Profesjonalny chip tuning silnika w Radomsku. Zwiększenie mocy do 35%, poprawa momentu obrotowego, zmniejszenie spalania. Gwarancja na modyfikację. Pomiar na hamowni.',
+  alternates: { canonical: '/uslugi/chip-tuning' },
+  openGraph: {
+    title: 'Chip Tuning | ERWO Garage Radomsko',
+    description: 'Profesjonalny chip tuning silnika w Radomsku. Zwiększenie mocy do 35%, poprawa momentu obrotowego, zmniejszenie spalania. Gwarancja na modyfikację. Pomiar na hamowni.',
+    url: 'https://erwo-garage.pl/uslugi/chip-tuning',
+    type: 'website',
+  },
 }
 
 const benefits = [
@@ -29,6 +37,8 @@ const examples = [
 export default function ChipTuningPage() {
   return (
     <main className="pt-24">
+      <JsonLd data={breadcrumbLd([{ name: 'Strona główna', path: '/' }, { name: 'Usługi', path: '/uslugi' }, { name: 'Chip Tuning', path: '/uslugi/chip-tuning' }])} />
+      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Service', name: 'Chip Tuning', serviceType: 'Chip Tuning', provider: { '@type': 'AutoRepair', name: 'ERWO Garage', '@id': 'https://erwo-garage.pl/#business' }, areaServed: { '@type': 'City', name: 'Radomsko' }, url: 'https://erwo-garage.pl/uslugi/chip-tuning' }} />
       <section className="bg-erwo-black text-white py-16">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bebas tracking-wide mb-4">Chip Tuning</h1>

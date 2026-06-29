@@ -2,15 +2,26 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, Clock, ArrowLeft } from 'lucide-react'
 import type { Metadata } from 'next'
+import JsonLd, { breadcrumbLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Wymiana rozrządu BMW – Kiedy i dlaczego? | ERWO Garage',
   description: 'Poznaj objawy zużycia rozrządu BMW i dowiedz się, kiedy należy wykonać wymianę, aby uniknąć poważnej awarii silnika.',
+  alternates: { canonical: '/blog/wymiana-rozrzadu-bmw' },
+  openGraph: {
+    title: 'Wymiana rozrządu BMW – Kiedy i dlaczego? | ERWO Garage',
+    description: 'Poznaj objawy zużycia rozrządu BMW i dowiedz się, kiedy należy wykonać wymianę, aby uniknąć poważnej awarii silnika.',
+    url: 'https://erwo-garage.pl/blog/wymiana-rozrzadu-bmw',
+    type: 'article',
+    publishedTime: '2025-10-15',
+  },
 }
 
 export default function RozrzadBMWPage() {
   return (
     <main className="pt-24">
+      <JsonLd data={breadcrumbLd([{ name: 'Strona główna', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Wymiana rozrządu BMW – Kiedy i dlaczego?', path: '/blog/wymiana-rozrzadu-bmw' }])} />
+      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Article', headline: 'Wymiana rozrządu BMW – Kiedy i dlaczego?', description: 'Poznaj objawy zużycia rozrządu BMW i dowiedz się, kiedy należy wykonać wymianę, aby uniknąć poważnej awarii silnika.', datePublished: '2025-10-15', dateModified: '2025-10-15', articleSection: 'Serwis', author: { '@type': 'Organization', name: 'ERWO Garage' }, publisher: { '@type': 'Organization', name: 'ERWO Garage', logo: { '@type': 'ImageObject', url: 'https://erwo-garage.pl/images/garage.jpeg' } }, image: 'https://erwo-garage.pl/images/garage.jpeg', mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erwo-garage.pl/blog/wymiana-rozrzadu-bmw' } }} />
       <section className="bg-erwo-black text-white py-16">
         <div className="container-custom max-w-3xl">
           <Link href="/blog" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-6 transition-colors">
@@ -28,7 +39,7 @@ export default function RozrzadBMWPage() {
       <section className="section-padding bg-white">
         <div className="container-custom max-w-3xl">
           <div className="relative h-72 rounded-xl overflow-hidden mb-10">
-            <Image src="/images/bmw4.jpeg" alt="Wymiana rozrządu BMW" fill className="object-cover" />
+            <Image src="/images/bmw4.jpeg" alt="Wymiana rozrządu BMW" fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover" />
           </div>
 
           <article className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">

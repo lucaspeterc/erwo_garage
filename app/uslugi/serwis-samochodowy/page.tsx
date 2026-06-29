@@ -2,10 +2,18 @@ import Link from 'next/link'
 import { CheckCircle, Phone } from 'lucide-react'
 import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/lib/constants'
+import JsonLd, { breadcrumbLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Serwis Samochodowy | ERWO Garage Radomsko',
   description: 'Kompleksowy serwis samochodowy w Radomsku. BMW, MINI, VW, Audi i inne marki. Diagnostyka, przeglądy, wymiana rozrządów, sprzęgła, klimatyzacja. Wpis do elektronicznej książki serwisowej.',
+  alternates: { canonical: '/uslugi/serwis-samochodowy' },
+  openGraph: {
+    title: 'Serwis Samochodowy | ERWO Garage Radomsko',
+    description: 'Kompleksowy serwis samochodowy w Radomsku. BMW, MINI, VW, Audi i inne marki. Diagnostyka, przeglądy, wymiana rozrządów, sprzęgła, klimatyzacja. Wpis do elektronicznej książki serwisowej.',
+    url: 'https://erwo-garage.pl/uslugi/serwis-samochodowy',
+    type: 'website',
+  },
 }
 
 const services = [
@@ -26,6 +34,8 @@ const services = [
 export default function SerwisPage() {
   return (
     <main className="pt-24">
+      <JsonLd data={breadcrumbLd([{ name: 'Strona główna', path: '/' }, { name: 'Usługi', path: '/uslugi' }, { name: 'Serwis Samochodowy', path: '/uslugi/serwis-samochodowy' }])} />
+      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Service', name: 'Serwis Samochodowy', serviceType: 'Serwis Samochodowy', provider: { '@type': 'AutoRepair', name: 'ERWO Garage', '@id': 'https://erwo-garage.pl/#business' }, areaServed: { '@type': 'City', name: 'Radomsko' }, url: 'https://erwo-garage.pl/uslugi/serwis-samochodowy' }} />
       <section className="bg-erwo-black text-white py-16">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bebas tracking-wide mb-4">Serwis Samochodowy</h1>

@@ -2,10 +2,18 @@ import Link from 'next/link'
 import { CheckCircle, Phone } from 'lucide-react'
 import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/lib/constants'
+import JsonLd, { breadcrumbLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Klimatyzacja | ERWO Garage Radomsko',
   description: 'Serwis klimatyzacji samochodowej w Radomsku. Nabijanie, odgrzybianie, diagnostyka i naprawa układu klimatyzacji. ERWO Garage.',
+  alternates: { canonical: '/uslugi/klimatyzacja' },
+  openGraph: {
+    title: 'Klimatyzacja | ERWO Garage Radomsko',
+    description: 'Serwis klimatyzacji samochodowej w Radomsku. Nabijanie, odgrzybianie, diagnostyka i naprawa układu klimatyzacji. ERWO Garage.',
+    url: 'https://erwo-garage.pl/uslugi/klimatyzacja',
+    type: 'website',
+  },
 }
 
 const features = [
@@ -21,6 +29,8 @@ const features = [
 export default function KlimatyzacjaPage() {
   return (
     <main className="pt-24">
+      <JsonLd data={breadcrumbLd([{ name: 'Strona główna', path: '/' }, { name: 'Usługi', path: '/uslugi' }, { name: 'Klimatyzacja', path: '/uslugi/klimatyzacja' }])} />
+      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Service', name: 'Klimatyzacja', serviceType: 'Klimatyzacja', provider: { '@type': 'AutoRepair', name: 'ERWO Garage', '@id': 'https://erwo-garage.pl/#business' }, areaServed: { '@type': 'City', name: 'Radomsko' }, url: 'https://erwo-garage.pl/uslugi/klimatyzacja' }} />
       <section className="bg-erwo-black text-white py-16">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bebas tracking-wide mb-4">Klimatyzacja</h1>

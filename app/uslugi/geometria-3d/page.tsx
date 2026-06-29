@@ -2,10 +2,18 @@ import Link from 'next/link'
 import { CheckCircle, Phone } from 'lucide-react'
 import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/lib/constants'
+import JsonLd, { breadcrumbLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Geometria 3D | ERWO Garage Radomsko',
   description: 'Profesjonalna geometria 3D kół w Radomsku. Precyzyjne ustawienie zbieżności, pochylenia i kąta skrętu. ERWO Garage.',
+  alternates: { canonical: '/uslugi/geometria-3d' },
+  openGraph: {
+    title: 'Geometria 3D | ERWO Garage Radomsko',
+    description: 'Profesjonalna geometria 3D kół w Radomsku. Precyzyjne ustawienie zbieżności, pochylenia i kąta skrętu. ERWO Garage.',
+    url: 'https://erwo-garage.pl/uslugi/geometria-3d',
+    type: 'website',
+  },
 }
 
 const features = [
@@ -21,6 +29,8 @@ const features = [
 export default function Geometria3DPage() {
   return (
     <main className="pt-24">
+      <JsonLd data={breadcrumbLd([{ name: 'Strona główna', path: '/' }, { name: 'Usługi', path: '/uslugi' }, { name: 'Geometria 3D', path: '/uslugi/geometria-3d' }])} />
+      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Service', name: 'Geometria 3D', serviceType: 'Geometria 3D', provider: { '@type': 'AutoRepair', name: 'ERWO Garage', '@id': 'https://erwo-garage.pl/#business' }, areaServed: { '@type': 'City', name: 'Radomsko' }, url: 'https://erwo-garage.pl/uslugi/geometria-3d' }} />
       <section className="bg-erwo-black text-white py-16">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bebas tracking-wide mb-4">Geometria 3D</h1>

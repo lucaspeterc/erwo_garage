@@ -27,7 +27,7 @@ export const heroSlides = [
   },
   {
     label:    'BMW & MINI',
-    title:    'Serwis BMW & MINI',
+    title:    'Niezależny serwis BMW & MINI',
     subtitle: '100 tys. km gwarancji na wybrane usługi. Twój spokój jest naszym priorytetem',
     cta1:     'Nasze usługi',
     cta1Href: '/uslugi',
@@ -315,7 +315,7 @@ export const chipTuningPage = {
     'Zwiększenie mocy silnika nawet do 35%',
     'Poprawa momentu obrotowego',
     'Zmniejszenie zużycia paliwa',
-    'Lepsza odpowiedź na gaz',
+    'Lepsza reakcja na gaz',
     'Gwarancja na wykonaną modyfikację',
     'Możliwość pomiaru mocy przed i po na hamowni',
     'Bezpieczne parametry',

@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
 import { projectsSection as copy } from '@/lib/copy'
-import { featuredProjects as projects } from '@/lib/realizacje'
+import { projects } from '@/lib/realizacje'
+import ProjectsInfiniteGrid from './ProjectsInfiniteGrid'
 
 export default function ProjectsSection() {
   return (
@@ -16,52 +15,8 @@ export default function ProjectsSection() {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="group relative overflow-hidden rounded-lg shadow-lg card-hover bg-white"
-            >
-              {/* Image */}
-              <div className="relative h-64 md:h-72 overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                {/* Category Badge */}
-                <div className="absolute top-4 right-4 bg-erwo-red text-white px-3 py-1 rounded-full text-sm font-roboto font-bold">
-                  {project.category}
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl mb-2 group-hover:text-erwo-red transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 font-roboto-condensed">
-                  {project.specs}
-                </p>
-              </div>
-
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-erwo-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="text-white text-center">
-                  <h3 className="text-xl mb-2">{project.title}</h3>
-                  <p className="text-gray-300 mb-4">{project.specs}</p>
-                  <span className="inline-flex items-center text-erwo-red font-bold">
-                    {copy.viewDetails}
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Projects Grid (infinite scroll) */}
+        <ProjectsInfiniteGrid projects={projects} />
 
         {/* CTA */}
         <div className="text-center mt-12">

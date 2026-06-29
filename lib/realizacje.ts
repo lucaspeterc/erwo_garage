@@ -46,9 +46,3 @@ export const projects: Project[] = [
 ]
 
 export const categories = ['Wszystkie', 'Chip Tuning', 'Serwis', 'Kompleksowa obsługa']
-
-// Wyróżnione realizacje pokazywane na stronie głównej (sekcja "Nasze Realizacje").
-const featuredIds = [11, 27, 6, 14, 22, 19]
-export const featuredProjects = featuredIds
-  .map((id) => projects.find((p) => p.id === id))
-  .filter((p): p is Project => Boolean(p))

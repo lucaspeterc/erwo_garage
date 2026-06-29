@@ -137,7 +137,7 @@ export default function KontaktPage() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-erwo-dark mb-1">Temat</label>
-                    <select name="subject" className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-erwo-red">
+                    <select name="temat" className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-erwo-red">
                       <option value="">Wybierz temat</option>
                       <option>Serwis samochodowy</option>
                       <option>Chip Tuning</option>

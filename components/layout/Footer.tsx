@@ -18,7 +18,7 @@ export default function Footer() {
               alt="ERWO Garage Logo"
               width={180}
               height={60}
-              className="h-12 w-auto mb-4 brightness-0 invert"
+              className="h-12 w-auto mb-4"
             />
             <p className="text-gray-400 text-sm mb-4">
               Profesjonalny serwis samochodowy, chip tuning i diagnostyka komputerowa w Radomsku.
